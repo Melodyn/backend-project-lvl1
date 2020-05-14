@@ -1,6 +1,9 @@
 brain-games:
 	node din/brain-games.js
 
+lint:
+	npx eslint .
+
 publish:
 	npm publish --dry-run
 
@@ -9,3 +12,4 @@ container_build:
 
 container_bash:
 	docker run -it --rm --name brain-games -v $(CURDIR):/usr/src/app hexlet:brain-games /bin/bash
+
