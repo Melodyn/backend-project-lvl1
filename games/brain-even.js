@@ -1,7 +1,8 @@
-const generateRandomNum = (min = 0, max = 100) => Math.floor(Math.random() * (max - min) + min);
-const getExpectedAnswer = (num, modulo = 2) => ((num % modulo === 0) ? 'yes' : 'no');
+import { generateRandomNum } from '../src/helpers.js';
 
 export const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const getExpectedAnswer = (num, modulo = 2) => ((num % modulo === 0) ? 'yes' : 'no');
 
 export const game = (totalRounds = 3) => {
   const rounds = [];
