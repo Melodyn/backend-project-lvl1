@@ -1,11 +1,20 @@
+start:
+	npm ci
+
 brain-games:
-	node din/brain-games.js
+	./bin/brain-games.js
 
 lint:
 	npx eslint .
 
+asciinema_rec:
+	asciinema rec
+
 publish:
 	npm publish --dry-run
+
+link:
+	npm link
 
 container_build:
 	docker build -t hexlet:brain-games . || true
