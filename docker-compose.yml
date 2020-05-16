@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  brain-games:
+    build: .
+    volumes:
+    - .:/usr/src/app
+    image: hexlet:brain-games
+    container_name: brain-games
+    tty: true
+    stdin_open: true
+    entrypoint: /bin/bash

@@ -17,8 +17,8 @@ link:
 	npm link
 
 container_build:
-	docker build -t hexlet:brain-games . || true
+	docker-compose build
 
 container_bash:
-	docker run -it --rm --name brain-games -v $(CURDIR):/usr/src/app hexlet:brain-games /bin/bash
+	docker-compose run --rm brain-games
 
