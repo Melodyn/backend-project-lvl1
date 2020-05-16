@@ -1,4 +1,4 @@
-export const empty = () => {}; // eslint hack
+export const expressionToString = (operator, num1, num2) => `${num1} ${operator} ${num2}`;
 
 export const generateRandomNum = (
   min = 0,

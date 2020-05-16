@@ -1,11 +1,10 @@
-import { generateRandomNum } from '../src/helpers.js';
+import { generateRandomNum, expressionToString } from '../src/helpers.js';
 
 export const description = 'What is the result of the expression?';
 
 const mathOperators = ['+', '-', '*'];
 
 const getRandomOperator = (operators) => operators[generateRandomNum(0, operators.length)];
-const expressionToString = (operator, num1, num2) => `${num1} ${operator} ${num2}`;
 
 const calc = (operator, num1, num2) => {
   switch (operator) {

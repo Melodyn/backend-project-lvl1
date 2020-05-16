@@ -7,3 +7,4 @@
 
 * Even: https://asciinema.org/a/330394
 * Calc: https://asciinema.org/a/330512
+* GCD: https://asciinema.org/a/330789

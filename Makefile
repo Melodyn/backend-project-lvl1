@@ -7,7 +7,7 @@ brain-games:
 lint:
 	npx eslint .
 
-asciinema_rec:
+asciinema:
 	asciinema rec
 
 publish:
