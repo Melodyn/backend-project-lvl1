@@ -1,4 +1,4 @@
-import { generateRandomNum } from '../src/helpers.js';
+import { generateRandomNum } from '../helpers.js';
 
 export const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 

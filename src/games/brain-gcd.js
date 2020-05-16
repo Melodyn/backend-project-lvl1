@@ -1,4 +1,4 @@
-import { generateRandomNum, expressionToString } from '../src/helpers.js';
+import { generateRandomNum, expressionToString } from '../helpers.js';
 
 export const description = 'Find the greatest common divisor of given numbers.';
 

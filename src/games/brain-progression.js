@@ -1,4 +1,4 @@
-import { generateRandomNum } from '../src/helpers.js';
+import { generateRandomNum } from '../helpers.js';
 
 export const description = 'What number is missing in the progression?';
 
