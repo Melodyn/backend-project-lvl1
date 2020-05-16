@@ -7,5 +7,6 @@
 
 * Even: https://asciinema.org/a/330394
 * Calc: https://asciinema.org/a/330512
-* Greatest common divisor: https://asciinema.org/a/330789
+* The greatest common divisor: https://asciinema.org/a/330789
 * Progression: https://asciinema.org/a/330805
+* Prime: https://asciinema.org/a/330813
