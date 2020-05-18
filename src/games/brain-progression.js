@@ -1,27 +1,28 @@
 import { generateRandomNum } from '../helpers.js';
+import { run, standardRoundsCount } from '../index.js';
 
-export const description = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const generateSequence = (start, step = 1, length = 10) => {
-  const sequence = [start];
+  const sequence = [];
+  const lastNumber = step * length + start;
 
-  for (let i = 1; i < length; i += 1) {
-    const [prevNum] = sequence;
-    sequence.unshift(prevNum + step);
+  for (let i = start; i < lastNumber; i += step) {
+    sequence.push(i);
   }
 
-  return sequence.reverse();
+  return sequence;
 };
 
 const replaceRandomItem = (items, replacer = '..') => {
-  const removeIndex = generateRandomNum(0, items.length);
-  const removedItem = items[removeIndex];
-  const processedItems = items.map((n, i) => ((i === removeIndex) ? replacer : n));
+  const removedIndex = generateRandomNum(0, items.length);
+  const removedItem = items[removedIndex];
+  const processedItems = items.map((n, i) => ((i === removedIndex) ? replacer : n));
 
   return [removedItem, processedItems];
 };
 
-export const game = (totalRounds = 3) => {
+const generateRounds = (totalRounds = 3) => {
   const rounds = [];
 
   for (let i = 1; i <= totalRounds; i += 1) {
@@ -35,3 +36,5 @@ export const game = (totalRounds = 3) => {
 
   return rounds;
 };
+
+export default () => run(description, generateRounds(standardRoundsCount));

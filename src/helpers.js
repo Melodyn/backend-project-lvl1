@@ -1,5 +1,4 @@
-export const expressionToString = (operator, num1, num2) => `${num1} ${operator} ${num2}`;
-
+// eslint-disable-next-line import/prefer-default-export
 export const generateRandomNum = (
   min = 0,
   max = 100,

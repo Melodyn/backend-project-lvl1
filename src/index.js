@@ -2,33 +2,27 @@ import readlineSync from 'readline-sync';
 
 export const standardRoundsCount = 3;
 
-export const run = (description, game, totalRounds = standardRoundsCount) => {
+export const run = (description, rounds) => {
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
   const winEndGameMessage = `Congratulations, ${name}!`;
   const loseEndGameMessage = `Let's try again, ${name}!`;
+  let endGameMessage = winEndGameMessage;
 
   console.log(`Hello, ${name}!`);
-
-  if (!description) return true;
   console.log(description);
 
-  const rounds = game(totalRounds);
-
-  const isWinner = rounds.every(([quest, expectedAnswer]) => {
+  rounds.every(([quest, expectedAnswer]) => {
     console.log(`Question: ${quest}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer.toLowerCase() !== expectedAnswer) {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${expectedAnswer}"`);
+      endGameMessage = `"${answer}" is wrong answer ;(. Correct answer was "${expectedAnswer}"\n${loseEndGameMessage}`;
       return false;
     }
     console.log('Correct!');
     return true;
   });
 
-  const endGameMessage = isWinner ? winEndGameMessage : loseEndGameMessage;
-
   console.log(endGameMessage);
-  return true;
 };

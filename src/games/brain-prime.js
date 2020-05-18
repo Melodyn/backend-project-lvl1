@@ -1,21 +1,22 @@
 import { generateRandomNum } from '../helpers.js';
+import { run, standardRoundsCount } from '../index.js';
 
-export const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  if (num < 4) return true;
+  if (num < 2) return false;
 
-  let delimiter = num - 1;
-  while (num % delimiter !== 0) {
-    delimiter -= 1;
+  const minimalDelimiter = num / 2;
+  for (let i = 2; i <= minimalDelimiter; i += 1) {
+    if (num % i === 0) return false;
   }
 
-  return delimiter === 1;
+  return true;
 };
 
 const getExpectedAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
 
-export const game = (totalRounds = 3) => {
+const generateRounds = (totalRounds = 3) => {
   const rounds = [];
 
   for (let i = 1; i <= totalRounds; i += 1) {
@@ -26,3 +27,5 @@ export const game = (totalRounds = 3) => {
 
   return rounds;
 };
+
+export default () => run(description, generateRounds(standardRoundsCount));

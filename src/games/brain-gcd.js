@@ -1,12 +1,7 @@
-import { generateRandomNum, expressionToString } from '../helpers.js';
+import { generateRandomNum } from '../helpers.js';
+import { run, standardRoundsCount } from '../index.js';
 
-export const description = 'Find the greatest common divisor of given numbers.';
-
-const generateRandomSequence = (min = 10, max = 100) => {
-  const num1 = generateRandomNum(min, max);
-  const num2 = generateRandomNum(min, max);
-  return num1 > num2 ? [num2, num1] : [num1, num2];
-};
+const description = 'Find the greatest common divisor of given numbers.';
 
 const findGCD = (num1, num2) => {
   const [largeNum, smallNum] = num1 > num2 ? [num1, num2] : [num2, num1];
@@ -20,15 +15,18 @@ const findGCD = (num1, num2) => {
   return iter(smallNum);
 };
 
-export const game = (totalRounds = 3) => {
+const generateRounds = (totalRounds = 3) => {
   const rounds = [];
 
   for (let i = 1; i <= totalRounds; i += 1) {
-    const [num1, num2] = generateRandomSequence();
-    const expression = expressionToString('', num2, num1);
+    const num1 = generateRandomNum(10);
+    const num2 = generateRandomNum(10);
+    const expression = `${num1} ${num2}`;
     const expectedAnswer = findGCD(num2, num1);
     rounds.push([expression, `${expectedAnswer}`]);
   }
 
   return rounds;
 };
+
+export default () => run(description, generateRounds(standardRoundsCount));
