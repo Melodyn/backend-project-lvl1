@@ -1,8 +1,7 @@
-start:
-	npm ci
+start: dependency link
 
-brain-games:
-	./bin/brain-games.js
+dependency:
+	npm ci
 
 lint:
 	npx eslint .
@@ -15,6 +14,8 @@ publish:
 
 link:
 	npm link
+
+container_start: container_build container_bash
 
 container_build:
 	docker-compose build

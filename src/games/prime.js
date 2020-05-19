@@ -6,8 +6,8 @@ const description = 'Answer "yes" if given number is prime. Otherwise answer "no
 const isPrime = (num) => {
   if (num < 2) return false;
 
-  const minimalDelimiter = num / 2;
-  for (let i = 2; i <= minimalDelimiter; i += 1) {
+  const maxDivisor = num / 2;
+  for (let i = 2; i <= maxDivisor; i += 1) {
     if (num % i === 0) return false;
   }
 
@@ -16,11 +16,11 @@ const isPrime = (num) => {
 
 const getExpectedAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
 
-const generateRounds = (totalRounds = 3) => {
+const generateRounds = (totalRoundsCount = 3) => {
   const rounds = [];
 
-  for (let i = 1; i <= totalRounds; i += 1) {
-    const expression = generateRandomNum();
+  for (let i = 1; i <= totalRoundsCount; i += 1) {
+    const expression = generateRandomNum(0, 99);
     const expectedAnswer = getExpectedAnswer(expression);
     rounds.push([expression, expectedAnswer]);
   }

@@ -15,15 +15,15 @@ const findGCD = (num1, num2) => {
   return iter(smallNum);
 };
 
-const generateRounds = (totalRounds = 3) => {
+const generateRounds = (totalRoundsCount = 3) => {
   const rounds = [];
 
-  for (let i = 1; i <= totalRounds; i += 1) {
-    const num1 = generateRandomNum(10);
-    const num2 = generateRandomNum(10);
+  for (let i = 1; i <= totalRoundsCount; i += 1) {
+    const num1 = generateRandomNum(10, 99);
+    const num2 = generateRandomNum(10, 99);
     const expression = `${num1} ${num2}`;
     const expectedAnswer = findGCD(num2, num1);
-    rounds.push([expression, `${expectedAnswer}`]);
+    rounds.push([expression, String(expectedAnswer)]);
   }
 
   return rounds;

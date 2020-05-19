@@ -5,10 +5,10 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const getExpectedAnswer = (num, modulo = 2) => ((num % modulo === 0) ? 'yes' : 'no');
 
-const generateRounds = (totalRounds = 3) => {
+const generateRounds = (totalRoundsCount = 3) => {
   const rounds = [];
 
-  for (let i = 1; i <= totalRounds; i += 1) {
+  for (let i = 1; i <= totalRoundsCount; i += 1) {
     const expression = generateRandomNum();
     const expectedAnswer = getExpectedAnswer(expression);
     rounds.push([expression, expectedAnswer]);
