@@ -7,6 +7,15 @@
 
 Подробнее: https://ru.hexlet.io/professions/backend/projects/44
 
+## Требования
+
+* Node.js >= 14
+* make >= 4
+
+Опционально:
+* Docker >= 19
+* Docker compose >= 1.25
+
 ## Демонстрационные игры:
 
 * Even: https://asciinema.org/a/330394
