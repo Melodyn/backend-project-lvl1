@@ -3,17 +3,7 @@ import { run, standardRoundsCount } from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const findGCD = (num1, num2) => {
-  const [largeNum, smallNum] = num1 > num2 ? [num1, num2] : [num2, num1];
-  const iter = (currentDivisor) => {
-    if ((largeNum % currentDivisor === 0) && (smallNum % currentDivisor === 0)) {
-      return currentDivisor;
-    }
-    return iter(currentDivisor - 1);
-  };
-
-  return iter(smallNum);
-};
+const findGCD = (a, b) => (((b === 0) || (a === b)) ? a : findGCD(b, a % b));
 
 const generateRounds = (totalRoundsCount = 3) => {
   const rounds = [];
