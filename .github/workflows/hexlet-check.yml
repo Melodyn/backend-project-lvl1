@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - run: docker login registry.gitlab.com -u hexlet -p ck56czdbKSfoPPoJfVNf
       - name: Hexlet project check
         uses: hexlet/project-action@master
         with:
