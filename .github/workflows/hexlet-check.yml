@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  PROJECT_IMAGE: registry.gitlab.com/hexlethq/projects/js_l1_brain_games4_project
+  PROJECT_IMAGE: hexletprojects/js_l1_brain_games4_project
 
 jobs:
   build:
