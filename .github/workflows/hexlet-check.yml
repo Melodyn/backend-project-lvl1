@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Hexlet project check
-        uses: hexlet/project-action@master
+        uses: hexlet/project-action@release
         with:
           project_image: ${{ env.PROJECT_IMAGE }}
