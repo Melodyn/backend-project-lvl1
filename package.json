@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Melodyn/backend-project-lvl1#readme",
   "dependencies": {
-    "promptly": "^3.0.3"
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
